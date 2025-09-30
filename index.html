@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>記憶力測試</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <div id="app">
+        <h1>記憶力測試</h1>
+        <div id="timer" style="font-size: 24px; color: red; margin: 20px;">剩餘時間：30秒</div>
+        <div id="words" style="font-size: 32px; line-height: 1.8; font-weight: bold; margin: 30px;">
+            蘋果 飛機 快樂 窗戶 小提琴 藍色 圖書館 跑步 電話 河流 勇敢 蛋糕
+        </div>
+    </div>
+
+    <script>
+        let time = 30;
+        const timerElement = document.getElementById('timer');
+        const wordsElement = document.getElementById('words');
+        
+        function updateTimer() {
+            time--;
+            timerElement.textContent = `剩餘時間：${time}秒`;
+            
+            if (time <= 0) {
+                wordsElement.innerHTML = '<div style="color: red; font-size: 36px;">時間到！請關閉頁面並返回問卷</div>';
+                timerElement.style.display = 'none';
+            } else {
+                setTimeout(updateTimer, 1000);
+            }
+        }
+        
+        // 開始計時
+        setTimeout(updateTimer, 1000);
+    </script>
+</body>
+</html>
