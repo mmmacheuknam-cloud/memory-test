@@ -132,6 +132,13 @@
     </div>
 
     <script>
+        
+        if(localStorage.getItem('testDone')){
+    alert('您已經完成過測試！'); 
+    window.close();
+}
+localStorage.setItem('testDone','true');
+        
         const words = [
             "蘋果", "飛機", "快樂", 
             "窗戶", "小提琴", "藍色", 
